@@ -1,22 +1,14 @@
-import { useSampleContext } from "@/app/(showcases)/6-context/SampleProvider";
 import React from "react";
+import { useSampleContext } from "@/app/(showcases)/6-context/useSampleContext";
+import NestedComponent2 from "./NestedComponent2";
 
 const NestedComponent = () => {
-  const { login, logout } = useSampleContext();
+  const { isLoggedIn } = useSampleContext();
   return (
-    <div className="flex space-x-5">
-      <button
-        onClick={login}
-        className="p-2 rounded-lg cursor-pointer bg-gray-700/75 hover:bg-[#ff7d61] hover:text-[#00004d] hover:scale-105 transition-all"
-      >
-        Login
-      </button>
-      <button
-        onClick={logout}
-        className="p-2 rounded-lg cursor-pointer bg-gray-700/75 hover:bg-[#ff7d61] hover:text-[#00004d] hover:scale-105 transition-all"
-      >
-        Logout
-      </button>
+    <div>
+      <h1>Context Example</h1>
+      {isLoggedIn ? <h1>Logged In</h1> : <h1>Logged Out</h1>}
+      <NestedComponent2 />
     </div>
   );
 };

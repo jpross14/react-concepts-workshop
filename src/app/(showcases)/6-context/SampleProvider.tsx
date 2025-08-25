@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 interface SampleContextType {
   isLoggedIn: boolean;
@@ -8,7 +8,7 @@ interface SampleContextType {
   logout: () => void;
 }
 
-const SampleContext = createContext<SampleContextType | null>(null);
+export const SampleContext = createContext<SampleContextType | null>(null);
 
 export const SampleProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -30,12 +30,4 @@ export const SampleProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <SampleContext.Provider value={value}>{children}</SampleContext.Provider>
   );
-};
-
-export const useSampleContext = () => {
-  const context = useContext(SampleContext);
-  if (!context) {
-    throw new Error("useSampleContext must be used within a SampleProvider");
-  }
-  return context;
 };
