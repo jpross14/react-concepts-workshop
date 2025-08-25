@@ -16,8 +16,18 @@ const ConditionalRendering1 = () => {
     <div>
       <h1>Conditional Rendering</h1>
       <div className="flex space-x-5">
-        <button onClick={login}>Login</button>
-        <button onClick={logout}>Logout</button>
+        <button
+          onClick={login}
+          className="p-2 rounded-lg cursor-pointer bg-gray-700/75 hover:bg-[#ff7d61] hover:text-[#00004d] hover:scale-105 transition-all"
+        >
+          Login
+        </button>
+        <button
+          onClick={logout}
+          className="p-2 rounded-lg cursor-pointer bg-gray-700/75 hover:bg-[#ff7d61] hover:text-[#00004d] hover:scale-105 transition-all"
+        >
+          Logout
+        </button>
       </div>
       {isLoggedIn && <h1>Logged In</h1>}
       {isLoggedIn ? <h1>Welcome</h1> : <h1>Please login</h1>}
@@ -26,11 +36,10 @@ const ConditionalRendering1 = () => {
 };
 
 interface ConditionalRenderingProps {
-  count: number
+  count: number;
 }
 
 const ConditionalRendering2 = ({ count }: ConditionalRenderingProps) => {
- 
   if (count <= 10) {
     return <h1>Count is less than or equal to 10</h1>;
   }
