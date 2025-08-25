@@ -2,15 +2,15 @@
 
 import { createContext, useState } from "react";
 
-interface SampleContextType {
+interface AuthContextType {
   isLoggedIn: boolean;
   login: () => void;
   logout: () => void;
 }
 
-export const SampleContext = createContext<SampleContextType | null>(null);
+export const AuthContext = createContext<AuthContextType | null>(null);
 
-export const SampleProvider = ({ children }: { children: React.ReactNode }) => {
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const login = () => {
@@ -28,6 +28,6 @@ export const SampleProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <SampleContext.Provider value={value}>{children}</SampleContext.Provider>
+    <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
   );
 };

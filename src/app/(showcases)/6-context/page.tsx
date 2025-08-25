@@ -1,12 +1,12 @@
 "use client";
-import { SampleProvider } from "./SampleProvider";
+import { AuthProvider } from "./AuthProvider";
 import NestedComponent from "@/components/NestedComponent";
 
 const ContextExample = () => {
   return (
-    <SampleProvider>
+    <AuthProvider>
       <NestedComponent />
-    </SampleProvider>
+    </AuthProvider>
   );
 };
 

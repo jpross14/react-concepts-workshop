@@ -1,8 +1,8 @@
-import { useSampleContext } from "@/app/(showcases)/6-context/useSampleContext";
+import { useAuthContext } from "@/app/(showcases)/6-context/useSampleContext";
 import React from "react";
 
 const NestedComponent = () => {
-  const { login, logout } = useSampleContext();
+  const { login, logout } = useAuthContext();
   return (
     <div className="flex space-x-5">
       <button

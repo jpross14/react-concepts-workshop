@@ -1,9 +1,9 @@
 import React from "react";
-import { useSampleContext } from "@/app/(showcases)/6-context/useSampleContext";
+import { useAuthContext } from "@/app/(showcases)/6-context/useSampleContext";
 import NestedComponent2 from "./NestedComponent2";
 
 const NestedComponent = () => {
-  const { isLoggedIn } = useSampleContext();
+  const { isLoggedIn } = useAuthContext();
   return (
     <div>
       <h1>Context Example</h1>

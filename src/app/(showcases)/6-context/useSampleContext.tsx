@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { SampleContext } from "./SampleProvider";
+import { AuthContext } from "./AuthProvider";
 
-export const useSampleContext = () => {
-  const context = useContext(SampleContext);
+export const useAuthContext = () => {
+  const context = useContext(AuthContext);
   if (!context) {
     throw new Error("useSampleContext must be used within a SampleProvider");
   }
